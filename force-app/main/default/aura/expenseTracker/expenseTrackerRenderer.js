@@ -1,5 +1,0 @@
-({
-	render : function(component, helper) {
-		
-	}
-})

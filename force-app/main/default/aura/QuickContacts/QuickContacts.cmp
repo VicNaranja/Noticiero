@@ -1,4 +1,0 @@
-<aura:component implements="force:appHostable">
-	<c:SearchBar /> 
-    <c:ContactList />
-</aura:component>

@@ -1,6 +1,0 @@
-<aura:documentation>
-	<aura:description>Documentation</aura:description>
-	<aura:example name="form" ref="VIC1:form" label="Label">
-		Permite añadir gastos en salesforce.
-	</aura:example>
-</aura:documentation>

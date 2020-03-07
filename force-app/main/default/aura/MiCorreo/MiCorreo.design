@@ -1,4 +1,0 @@
-<design:component label="Noticiero">
-		<design:attribute name="seccion" label="Seccion" default="Iberostar" datasource="Iberostar,ElCorreo" description="Elige la fuente de noticias que quieras ver" />
-    	<!--<design:attribute name="designHeight" label="Height" datasource="small,medium,large" default="small" description="How tall should the component?" />-->
-</design:component>
