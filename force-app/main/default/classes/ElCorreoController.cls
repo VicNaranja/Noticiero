@@ -1,11 +1,15 @@
 /*
-Clase controladora para recuperar noticias de varias fuentes 1.0
+Clase controladora para recuperar noticias de varias fuentes 2.0
+
+Modificado en Test
+
 */
 public class ElCorreoController {
 
     @AuraEnabled
     public static List<Noticia> getNoticias(String section) {
          String url = '';
+
          system.debug('getNoticias::section::' + section);
          if (section == 'Iberostar')
          {
