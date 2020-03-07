@@ -1,0 +1,33 @@
+<template>
+   
+    <div if:true={noticia.Destacada} class="noticiaDestacada">                      
+        <div class="img">
+            <img class="" src={noticia.UrlImagenPequena}></img>
+        </div>
+        <div class="titular">     
+            <h1>{noticia.Titular}</h1>
+            <h2>{noticia.Entradilla}</h2>
+        </div>        
+    </div>
+
+    <div if:false={noticia.Destacada} >   
+
+        <div if:true={noticia.separador} class="noticia" >  
+            <div class="separador">
+            <h1>{noticia.Titular}</h1>                                
+            </div>                                                       
+        </div>
+        
+        <div if:false={noticia.separador} class="noticia">                 
+            <div class="img">
+                <img class="" src={noticia.UrlImagenPequena}></img>
+            </div>
+            <div class="titular" onclick={noticiaSeleccionada}>     
+                <h1><span>{noticia.Titular}</span></h1>
+                <h2>{noticia.Entradilla}</h2>
+            </div>
+        </div>    
+
+    </div>
+
+</template>

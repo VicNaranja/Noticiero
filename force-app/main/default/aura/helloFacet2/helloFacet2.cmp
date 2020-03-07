@@ -1,0 +1,12 @@
+<aura:component>
+	
+  See how we set the header facet.<br/>
+
+    <VIC1:facetHeader>
+ 		<aura:set attribute="header">
+            Paso de atributo por cabecera
+        </aura:set>
+        Cuerpo del componente      
+    </VIC1:facetHeader>    
+    
+</aura:component>

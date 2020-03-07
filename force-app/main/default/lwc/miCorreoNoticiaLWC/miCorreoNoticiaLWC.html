@@ -1,0 +1,30 @@
+<template>
+    
+    <div class="imagen">        
+        <img src={noticia.UrlImagenGrande} />
+    </div>
+    <div class="titular">
+        <h1>{noticia.Titular}</h1>
+    </div>
+    <div class="entradilla">
+        <h2>{noticia.Entradilla}</h2>
+    </div>
+    <div class="parrafos">
+        <template for:each={noticia.listaParrafos} for:item="parrafo">
+
+            <div key={parrafo.Texto}>
+                <div if:true={parrafo.esImg}>
+                    <img src={parrafo.Texto} />
+                </div>
+                <div if:true={parrafo.Strong}>
+                    <p class="strong">{parrafo.Texto}</p>
+                </div>
+                <div if:false={parrafo.Strong}>
+                    <p>{parrafo.Texto}</p>
+                </div>
+            </div>           
+            
+        </template>
+    </div>
+
+</template>

@@ -1,0 +1,9 @@
+<aura:component>
+    <aura:attribute name="baseUrl" type="String" default="/resource/"/>
+    <aura:attribute name="styles" type="Map"/>
+    <aura:attribute name="scripts" type="Map"/>
+    <aura:attribute name="deps" type="Map"/>
+    <aura:attribute name="initScripts" type="Aura.Action"/>
+    <aura:registerEvent name="requiresReady" type="aotp1:requiresReady"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+</aura:component>

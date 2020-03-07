@@ -1,0 +1,9 @@
+.THIS {
+	background : #000000;
+}
+.THIS h1{
+    background: url(/img/icon/creditCard32.png) no-repeat;
+    padding-left: 40px;   
+    color:White;
+    padding-bottom: 5px
+}

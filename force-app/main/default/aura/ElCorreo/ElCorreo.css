@@ -1,0 +1,33 @@
+.THIS.Container
+{
+    background:#ffffff;
+    height:100%;
+    overflow-y:scroll;
+}    
+.THIS .TituloApp H1
+{
+    font-weight:bold;
+    font-size:3em;    
+    padding-left:10px;
+    padding-top:5px;
+    display: flex;
+    flex-direction: row;  
+}
+
+.THIS .TituloApp #menu img
+{
+    width:50px;
+}
+.THIS #ContenedorNoticias
+{
+	max-width: 1000px;    
+}
+
+.THIS #ContenedorNoticia
+{
+    max-width: 1000px;
+}
+.THIS .oculto
+{
+    display:none;
+}

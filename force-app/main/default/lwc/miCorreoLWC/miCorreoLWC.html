@@ -1,0 +1,61 @@
+<template>
+    <div class="Container">
+
+        <div if:true={seccionIberostar}>
+        	<div class="Header">
+                <div class="TituloAppIberostar">
+                    <div class="menu oculto" onclick={backButtonPress}>
+                        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390380-200.png"></img>
+                    </div>
+                    <div class="estrella">
+                        <img width="50" src="https://c.eu4.content.force.com/servlet/servlet.ImageServer?id=015570000054V1R&amp;oid=00D20000000JOfe" />
+                        <h1><span style="color:#67BAAF">Noticias</span></h1>
+                    </div>
+                    
+                </div> 
+            </div>
+
+        </div>
+
+        <div if:true={seccionElCorreo}>
+            <div class="Header">
+                <div class="TituloApp">
+                    <div class="menu oculto" onclick={backButtonPress}>
+                        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390380-200.png"></img>
+                    </div>
+                    <h1><span style="color:Red">Mi</span> CORREO</h1>
+                </div>   
+                 <!--
+                <lightning:buttonMenu alternativeText="Toggle menu" onselect="{!c.onselectMenu}" menuAlignment="right">
+                    <lightning:menuItem label="Portada" value="portada" />
+                    <lightning:menuItem label="Sociedad" value="Iberostar" />
+                    <lightning:menuItem label="Politica" value="politica" />
+                    <lightning:menuItem label="Internacional" value="internacional" />
+                    <lightning:menuItem label="Culturas" value="culturas" />
+                    <lightning:menuItem label="Tecnología" value="tecnologia" />
+                    <lightning:menuItem label="Economia" value="economia" />
+                    <lightning:menuItem label="Planes" value="planes" />
+                    <lightning:menuItem label="Deportes" value="deportes" />
+                    <lightning:menuItem label="Gente" value="gente" />
+                    <lightning:menuItem label="ATHLETIC" value="athletic" />
+                </lightning:buttonMenu>     
+                -->          
+            </div>
+        </div>
+       
+
+
+        <div if:false={noticiaCargada} class="ContenedorNoticias">    	 
+            <template for:each={noticias} for:item="noticia">
+                
+                <c-mi-correo-mini-noticia-l-w-c key={noticia.id} noticia={noticia} onnoticiaseleccionada={noticiaPulsada} ></c-mi-correo-mini-noticia-l-w-c>
+                
+            </template>
+        </div>
+
+        <div if:true={noticiaCargada} class="ContenedorNoticia">                
+            <c-mi-correo-noticia-l-w-c noticia={noticiaSeleccionada} ></c-mi-correo-noticia-l-w-c>
+        </div>
+
+    </div>
+</template>

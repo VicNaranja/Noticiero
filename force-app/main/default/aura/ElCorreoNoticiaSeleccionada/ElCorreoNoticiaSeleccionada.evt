@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Se lanza cuando se pulsa una noticia en el listado de noticias" >
+    <aura:attribute name="noticia" type="Noticia"/>
+</aura:event>

@@ -1,0 +1,77 @@
+<aura:component controller="ElCorreoController"  implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+	
+     <ltng:require scripts="{!join(',',
+							$Resource.jquery + '/jquery.js',
+                            $Resource.scrollTo + '/jquery.scrollTo-2.1.2/jquery.scrollTo.js')}"
+		afterScriptsLoaded="{!c.doInit}"/>
+    
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" /> -->
+    
+    
+    
+    <aura:handler event="c:MiCorreoNoticiaSeleccionada" action="{!c.noticiaSeleccionada}" />
+    
+    <aura:attribute name="origen" type="String"/>
+    <aura:attribute name="seccion" type="String"/>
+    
+    <aura:attribute name="scrollTop" type="Integer"/>
+        
+    <aura:attribute name="noticias" type="Noticia[]"/>
+    <aura:attribute name="noticiaSeleccionada" type="Noticia"  />
+    
+    <div class="Container">
+        
+        
+        <aura:if isTrue="{!v.seccion == 'Iberostar'}">
+        	<div class="Header">
+                <div class="TituloAppIberostar">
+                    <div aura:id="menu" id="menu" class="oculto" onclick="{!c.backButtonPress}">
+                        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390380-200.png"></img>
+                    </div>
+                    <div class="estrella">
+                        <img width="50" src="https://c.eu4.content.force.com/servlet/servlet.ImageServer?id=015570000054V1R&amp;oid=00D20000000JOfe" />
+                        <h1><span style="color:#67BAAF">Noticias</span></h1>
+                    </div>
+                    
+                </div> 
+            </div>
+            <aura:set attribute="else">
+                <div class="Header">
+                    <div class="TituloApp">
+                        <div aura:id="menu" id="menu" class="oculto" onclick="{!c.backButtonPress}">
+                            <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/390380-200.png"></img>
+                        </div>
+                        <h1><span style="color:Red">Mi</span> CORREO</h1>
+                    </div>   
+                            
+                    <lightning:buttonMenu alternativeText="Toggle menu" onselect="{!c.onselectMenu}" menuAlignment="right">
+                    <lightning:menuItem label="Portada" value="portada" />
+                    <lightning:menuItem label="Sociedad" value="Iberostar" />
+                    <lightning:menuItem label="Politica" value="politica" />
+                    <lightning:menuItem label="Internacional" value="internacional" />
+                    <lightning:menuItem label="Culturas" value="culturas" />
+                    <lightning:menuItem label="Tecnología" value="tecnologia" />
+                    <lightning:menuItem label="Economia" value="economia" />
+                    <lightning:menuItem label="Planes" value="planes" />
+                    <lightning:menuItem label="Deportes" value="deportes" />
+                    <lightning:menuItem label="Gente" value="gente" />
+                    <lightning:menuItem label="ATHLETIC" value="athletic" />
+                </lightning:buttonMenu>        
+                </div>
+            </aura:set>
+        </aura:if>
+        
+        
+        <ui:scrollerWrapper aura:id="scroll" class="ContenedorScroll">
+            <div aura:id="ContenedorNoticias"  id="ContenedorNoticias">    	 
+                <aura:iteration items="{!v.noticias}" var="noticia">
+                    <c:MiCorreoMiniNoticia noticia="{!noticia}" origen="{!v.origen}" seccion="{!v.seccion}" />
+                </aura:iteration>  		
+            </div>    
+            <div aura:id="ContenedorNoticia" id="ContenedorNoticia" class="oculto">                
+                <c:ElCorreoNoticia noticia="{!v.noticiaSeleccionada}" />
+            </div>
+        </ui:scrollerWrapper>
+        
+    </div>
+</aura:component>

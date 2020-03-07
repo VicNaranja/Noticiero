@@ -1,0 +1,15 @@
+.THIS.container {
+    position: relative;
+    width: auto;
+    margin: 5px auto;
+}
+
+.THIS.container .left {
+    width: 50%;
+    float: left;
+}
+
+.THIS.container .right {
+    width: 50%;
+    float: right;
+}
