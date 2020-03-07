@@ -1,3 +1,0 @@
-<apex:page standardStylesheets="false" Controller="ApprovalController" showHeader="false" sidebar="false" action="{!approved}" >
-    
-</apex:page>
