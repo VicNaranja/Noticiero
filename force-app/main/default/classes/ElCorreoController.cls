@@ -1,5 +1,5 @@
 /*
-Clase controladora para recuperar noticias de varias fuentes
+Clase controladora para recuperar noticias de varias fuentes 1.0
 */
 public class ElCorreoController {
 
